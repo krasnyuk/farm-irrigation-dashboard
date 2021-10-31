@@ -6,9 +6,12 @@
          [formControl]="formControl"
          [matAutocomplete]="auto">
   <mat-icon matSuffix>search</mat-icon>
-  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-    <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
-      {{option}}
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
+    <mat-option *ngFor="let option of locations$ | async; trackBy: trackByFn" [value]="option">
+      {{option.title + ' | ' + option.weatherInfo.currentTemperature + '°'}}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
+<div *ngIf="locationsLoading$ | async" class="address-search__progress-bar">
+  <mat-progress-spinner [diameter]="20" mode="indeterminate"></mat-progress-spinner>
+</div>

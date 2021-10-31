@@ -6,6 +6,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   declarations: [AddressSearchComponent],
   exports: [AddressSearchComponent],

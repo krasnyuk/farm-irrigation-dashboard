@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Kyiv, Ukraine",
+    "weatherInfo":{
+      "currentTemperature": 24,
+      "minTemperature": 21,
+      "maxTemperature": 26,
+      "description": "Sunny"
+    },
+    "dateTime": "2021-10-31T20:11:44.459Z"
+  },
+  {
+    "title": "Dubai, UAE",
+    "weatherInfo":{
+      "currentTemperature": 12,
+      "minTemperature": 2,
+      "maxTemperature": 18,
+      "description": "Cloudy"
+    },
+    "dateTime": "2021-10-31T16:08:44.459Z"
+  },
+  {
+    "title": "New York, USA",
+    "weatherInfo":{
+      "currentTemperature": 5,
+      "minTemperature": -1,
+      "maxTemperature": 8,
+      "description": "Sunny"
+    },
+    "dateTime": "2021-10-31T12:10:54.459Z"
+  }
+]
