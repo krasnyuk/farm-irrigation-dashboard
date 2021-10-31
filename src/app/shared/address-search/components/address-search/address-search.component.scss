@@ -1,0 +1,11 @@
+.address-search {
+  display: block;
+
+  &__form-field {
+    width: 100%;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+}

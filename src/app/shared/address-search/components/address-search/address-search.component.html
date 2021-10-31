@@ -1,0 +1,14 @@
+<mat-form-field class="address-search__form-field" appearance="outline">
+  <mat-label>Address</mat-label>
+  <input type="text"
+         placeholder="Enter address"
+         matInput
+         [formControl]="formControl"
+         [matAutocomplete]="auto">
+  <mat-icon matSuffix>search</mat-icon>
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
