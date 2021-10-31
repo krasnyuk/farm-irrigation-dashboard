@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+
+  &__current_temp {
+    margin-right: 5px;
+    font-size: 2.5rem;
+    line-height: 1em;
+  }
+
+  &__additional-info {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+  }
+}

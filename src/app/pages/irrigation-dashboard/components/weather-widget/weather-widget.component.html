@@ -1,0 +1,7 @@
+<div *ngIf="weatherInfo" class="weather-info">
+  <div class="weather-info__current_temp">{{weatherInfo.currentTemperature}}°</div>
+  <div class="weather-info__additional-info">
+    <span>{{weatherInfo.description}}</span>
+    <span>{{weatherInfo.maxTemperature + '° / ' + weatherInfo.minTemperature}}°</span>
+  </div>
+</div>
