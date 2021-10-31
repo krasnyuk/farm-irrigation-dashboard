@@ -1,4 +1,13 @@
-import {ChangeDetectionStrategy, Component, HostBinding, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  OnDestroy,
+  OnInit,
+  ViewEncapsulation,
+  EventEmitter,
+  Output
+} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {LocationsService} from '../../locations.service';
@@ -25,6 +34,8 @@ export class AddressSearchComponent implements OnInit, OnDestroy {
 
   @HostBinding('class.address-search') baseClass = true;
 
+  @Output() locationSelected = new EventEmitter<LocationInfo>();
+
   constructor(private locationsService: LocationsService) { }
 
   ngOnInit(): void {
@@ -37,6 +48,10 @@ export class AddressSearchComponent implements OnInit, OnDestroy {
 
   trackByFn(index: number, location: LocationInfo): string {
     return location.title; // ID will be used in real world app
+  }
+
+  selectLocation(location: LocationInfo): void {
+    this.locationSelected.emit(location);
   }
 
   private loadLocationsOnSearchChange() {

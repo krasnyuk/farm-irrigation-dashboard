@@ -1,10 +1,11 @@
 <header class="dashboard-header">
-  <div class="dashboard-header__search">
-    <app-address-search></app-address-search>
-  </div>
   <div class="dashboard-header__info">
-    <app-weather-widget></app-weather-widget>
-    <app-date-widget></app-date-widget>
-    <app-user-account></app-user-account>
+    <app-address-search class="dashboard-header__search" (locationSelected)="onLocationSelected($event)"></app-address-search>
+
+    <div class="dashboard-header__location-data" *ngIf="location$ | async as location">
+      <app-weather-widget [weatherInfo]="location.weatherInfo"></app-weather-widget>
+      <app-date-widget [dateTime]="location.dateTime"></app-date-widget>
+      <app-user-account></app-user-account>
+    </div>
   </div>
 </header>
